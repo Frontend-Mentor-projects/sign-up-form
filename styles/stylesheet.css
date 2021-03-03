@@ -1,0 +1,284 @@
+*,
+*::before,
+*::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+}
+
+:root {
+      --red: hsl(0, 100%, 72%);
+      --green: hsl(154, 59%, 51%);
+      --blue: hsl(248, 32%, 49%);
+      --darkBlue: hsl(249, 10%, 26%);
+      --grayBlue: hsl(246, 25%, 77%);
+      --white: hsl(0, 0%, 100%);
+      --lightGray: hsl(246, 25%, 90%);
+      --transition: all 500ms ease-in-out;
+}
+
+body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.5;
+}
+
+section {
+      background: var(--red) url(../images/bg-intro-mobile.png);
+      min-height: 100vh;
+}
+
+.content {
+      text-align: center;
+      padding: 5rem 1.5rem 0;
+}
+
+.content h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+}
+
+.content p {
+      font-size: 0.975rem;
+      color: var(--white);
+      opacity: 0.8;
+      margin-top: 1.5rem;
+}
+
+.wrapper {
+      padding: 4rem 1.5rem 4rem;
+      display: flex;
+      flex-flow: column nowrap;
+      position: relative;
+}
+
+.wrapper .subscribe__pricing {
+      background: var(--blue);
+      color: var(--grayBlue);
+      font-size: 0.875rem;
+      text-align: center;
+      padding: 1rem 3.2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.4rem 0 rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+}
+
+.wrapper .subscribe__pricing span {
+      font-weight: 600;
+      color: #fff;
+      opacity: 1;
+}
+
+.subscribe__form {
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: 0.5rem;
+      box-shadow: 0 0.4rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      padding: 2rem;
+      display: none;
+      animation: fadeInDown 1s;
+}
+
+.blur h2 {
+      color: var(--blue);
+      font-size: 1.2rem;
+      line-height: 1.5;
+}
+
+@-webkit-keyframes fadeInDown {
+      0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+      }
+      100% {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+      }
+}
+@keyframes fadeInDown {
+      0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+      }
+      100% {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+      }
+}
+.subscribe__form {
+      position: relative;
+}
+
+.subscribe__form input {
+      width: 100%;
+      font-size: 0.875rem;
+      padding: 1rem;
+      outline: none;
+      border-radius: 0.5rem;
+      border: 2px solid var(--lightGray);
+}
+
+.subscribe__form input::placeholder {
+      color: var(--darkBlue);
+      font-weight: bold;
+}
+
+.subscribe__form button {
+      width: 100%;
+      padding: 1.2rem 1rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+      background: var(--green);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 0.2rem 0 hsl(154, 59%, 45%);
+      transition: background 300ms ease-in-out;
+}
+
+.subscribe__form button:hover {
+      background: hsl(154, 59%, 65%);
+}
+
+.subscribe__form p.terms {
+      font-size: 0.65rem;
+      text-align: center;
+      margin-top: 1rem;
+      padding: 0 1rem;
+      color: var(--grayBlue);
+}
+
+.subscribe__form p span {
+      color: var(--red);
+      font-weight: bold;
+}
+
+.form-control {
+      position: relative;
+      margin-bottom: 1rem;
+}
+
+.form-control.success input {
+      border-color: #2ecc71;
+      transition: var(--transition);
+}
+
+.subscribe__form i {
+      font-size: 25px;
+      color: #2ecc71;
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      visibility: hidden;
+      transition: var(--transition);
+}
+
+.subscribe__form img {
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      visibility: hidden;
+      transition: var(--transition);
+}
+
+.subscribe__form small {
+      color: var(--red);
+      display: block;
+      text-align: right;
+      visibility: hidden;
+      transition: var(--transition);
+}
+
+.form-control.error input {
+      border-color: #e74c3c;
+      transition: var(--transition);
+}
+
+.form-control.success i {
+      visibility: visible;
+      transition: var(--transition);
+}
+
+.form-control.error img {
+      visibility: visible;
+      transition: var(--transition) t;
+}
+
+.form-control.error small {
+      visibility: visible;
+      transition: var(--transition);
+}
+
+.form-control.error input::placeholder {
+      color: transparent;
+      transition: var(--transition);
+}
+
+@media screen and (min-width: 70rem) {
+      section {
+            display: flex;
+            height: 100vh;
+            background: var(--red) url(../images/bg-intro-desktop.png) no-repeat;
+            background-size: cover;
+            margin: auto;
+            padding: 9rem;
+      }
+      .content,
+      .wrapper {
+            justify-content: center;
+            align-self: center;
+      }
+      .content {
+            padding: 0;
+            text-align: left;
+            flex-basis: 50%;
+      }
+      .content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+      }
+      .content p {
+            font-size: 1rem;
+            padding-right: 2rem;
+      }
+      .wrapper {
+            flex-basis: 50%;
+            padding: 0;
+      }
+      .wrapper .subscribe__pricing {
+            padding: 1.5rem 0;
+            box-shadow: 0 0.6rem 0 rgba(0, 0, 0, 0.1);
+      }
+      .wrapper .subscribe__form {
+            padding: 3rem;
+            box-shadow: 0 0.7rem 0 rgba(0, 0, 0, 0.1);
+      }
+      .wrapper .subscribe__form input {
+            padding: 1.5rem;
+      }
+      .wrapper .subscribe__form button {
+            padding: 1.5rem 1rem 1.3rem;
+      }
+}
